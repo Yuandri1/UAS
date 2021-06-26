@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Country Finder</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" /> 
+    <link rel="stylesheet" href="css/custom-style.css" />
+  </head>
+  <body>
+
+    <!-- Responsive navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container px-lg-5">
+        <a class="navbar-brand" href="#!">Country Finder</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#!">Search</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#!">Description</a></li>
+            <li class="nav-item"><a class="nav-link" href="#!">Holiday</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Header-->
+    <header class="py-5">
+    <div class="jumbotron big-banner">
+      <div class="container px-lg-5">
+        <div class="p-4 p-lg-5 bg-bg-transparent rounded-3 text-center text-white">
+          <div class="m-4 m-lg-5">
+            <h1 class="display-5 fw-bold">COUNTRY FINDER</h1>
+            <p class="fs-4">
+              Type the Country name in search bar below and press 'Search' to
+              search the country information and Country Holiday
+            </p>
+            <input class="form-control" type="text" placeholder="Input your Country Here" id='inputnegara'>
+            </div>
+            <a class="btn btn-secondary btn-lg" href="#!" id='button1'>Search</a>
+            <!--Refresh Button-->
+
+          </div>
+        </div>
+        
+      </div>
+            <div class='text-center'>
+            <button onClick="window.location.reload();" class='btn btn-secondary btn-lg'>Random</button>
+            </div>
+    </header>
+
+    <!-- Random Array-->
+
+  <div id="main-container" align='center' >
+    <div id="flag-container">
+    <div class="col bg-light">
+      <img src="" alt="" class='rounded mx-auto d-block' height='250px'>
+    </div>
+    <div class="col bg-light">
+    <div id="info-container">
+    
+      <select id="countries"></select>
+      <p class="fw-bold">Capital: <span id="Rcapital"></span></p>
+      <p class="fw-bold">Dialing Code: <span id="Rdialing-code"></span></p>
+      <p class="fw-bold">Population: <span id="Rpopulation"></span></p>
+      <p class="fw-bold">Currencies: <span id="Rcurrencies"></span></p>
+      <p class="fw-bold">Region: <span id="Rregion"></span></p>
+      <p class="fw-bold">Subregion: <span id="Rsubregion"></span></p>
+      <p class="fw-bold">Lat-long: <span id="Rlatlng"></span></p>
+      <p class="fw-bold">Timezones: <span id="Rtimezones"></span></p>
+      <p class="fw-bold">Alpha2code: <span id="Rcodes"></span></p>
+    </div>
+    
+    <!-- Country Flags -->
+    <h2 align='center'>Flag</h2>
+    <div class="card" align='center' style="width: 24rem">
+    <img src="assets/noimage.png" class="rounded mx-auto d-block" alt="assets/noimage.png" height='250px' id='flag'>
+  </div>
+</div>
+
+
+    <br />
+    
+    <!-- Page Content-->
+    <section class="pt-4">
+      <div class="container px-lg-5">
+        <!-- Page Features-->
+        <div class="container">
+  <div class="row">
+    <div class="col bg-light">
+    <p class="fs-1" align='center'>Description:</p>
+    </div>
+
+    <div class="w-100"></div>
+    <div class="col btn-light" align='center'>
+      <p class="fw-bold">Nama: <span id="nama"></span></p>
+      <p class="fw-bold">Capital: <span id="capital"></span></p>
+      <p class="fw-bold">Dialing Code: <span id="dialing-code"></span></p>
+      <p class="fw-bold">Population: <span id="population"></span></p>
+      <p class="fw-bold">Currencies: <span id="currencies"></span></p>
+      <p class="fw-bold">Region: <span id="region"></span></p>
+      <p class="fw-bold">Subregion: <span id="subregion"></span></p>
+      <p class="fw-bold">Lat-long: <span id="latlng"></span></p>
+      <p class="fw-bold">Timezones: <span id="timezone"></span></p>
+    <!--1-->  
+    <!--Hari Libur-->
+        <div class="col bg-light">
+    <p class="fs-1" align='center'>Holiday:</p>
+    </div>
+    <div class="col btn-light" align='center'>
+    <p class="fw-bold" align='center'>Alpha 2 Code</p>
+    <p id="code">code</p>
+    <div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Input Alpha 2 Code Here" aria-label="Username" id='inputkode'>
+  <a class="btn btn-secondary btn-lg" href="#!" id='button2'>Search</a>
+
+</div>
+    <div class="container">
+  <div class="row">
+    <div class="col">
+      <p class="fw-bold">Date:</p>
+    </div>
+    <div class="col">
+      <p class="fw-bold">English Name:</p>
+    </div>
+    <div class="col">
+      <p class="fw-bold">Local Name:</p>
+    </div>
+  </div>
+</div>
+<!--Col 1-->
+<div class="container">
+  <div class="row">
+    <div class="col" id='date1'>
+      
+    </div>
+    <div class="col" id='engname1'>
+      
+    </div>
+    <div class="col" id='lclname1'>
+      
+    </div>
+  </div>
+</div>
+<!--Col 2-->
+<div class="container">
+  <div class="row">
+    <div class="col" id='date2'>
+      
+    </div>
+    <div class="col" id='engname2'>
+       
+    </div>
+    <div class="col" id='lclname2'>
+       
+    </div>
+  </div>
+</div>
+<!--Col 3-->
+<div class="container">
+  <div class="row">
+    <div class="col" id='date3'>
+      
+    </div>
+    <div class="col" id='engname3'>
+       
+    </div>
+    <div class="col" id='lclname3'>
+       
+    </div>
+  </div>
+</div>
+<!--Col 4-->
+<div class="container">
+  <div class="row">
+    <div class="col" id='date4'>
+       
+    </div>
+    <div class="col" id='engname4'>
+       
+    </div>
+    <div class="col" id='lclname4'>
+       
+    </div>
+  </div>
+</div>
+<!--COl 5-->
+<div class="container">
+  <div class="row">
+    <div class="col" id='date5'>
+      
+    </div>
+    <div class="col" id='engname5'>
+       
+    </div>
+    <div class="col" id='lclname5'>
+      
+    </div>
+  </div>
+</div>
+<!--COl 6-->
+<div class="container">
+  <div class="row">
+    <div class="col" id='date6'>
+      
+    </div>
+    <div class="col" id='engname6'>
+      
+    </div>
+    <div class="col" id='lclname6'>
+      
+    </div>
+  </div>
+</div>
+<!--COl 7-->
+<div class="container">
+  <div class="row">
+    <div class="col" id='date7'>
+      
+    </div>
+    <div class="col" id='engname7'>
+      
+    </div>
+    <div class="col" id='lclname7'>
+      
+    </div>
+  </div>
+</div>
+<!--COl 8-->
+<div class="container">
+  <div class="row">
+    <div class="col" id='date8'>
+      
+    </div>
+    <div class="col" id='engname8'>
+      
+    </div>
+    <div class="col" id='lclname8'>
+      
+    </div>
+  </div>
+</div>
+<!--COl 9-->
+<div class="container">
+  <div class="row">
+    <div class="col" id='date9'>
+      
+    </div>
+    <div class="col" id='engname9'>
+      
+    </div>
+    <div class="col" id='lclname9'>
+      
+    </div>
+  </div>
+</div>
+<!--COl 10-->
+<div class="container">
+  <div class="row">
+    <div class="col" id='date10'>
+      
+    </div>
+    <div class="col" id='engname10'>
+      
+    </div>
+    <div class="col" id='lclname10'>
+      
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+</div>
+    <!-- Footer-->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; rosewald.studio
+        </p>
+      </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <script>
+    //Script Random Array
+    // Global Variables
+const countriesList = document.getElementById("countries");
+let countries; // will contain "fetched" data
+
+// Event Listeners
+// countriesList.addEventListener("change", event => displayCountryInfo(event.target.value));
+
+countriesList.addEventListener("change", newCountrySelection);
+
+function newCountrySelection(event) {
+  displayCountryInfo(event.target.value);
+}
+
+// fetch("https://restcountries.eu/rest/v2/all")
+// .then(function(res){
+//   // console.log(res);
+//   return res.json();
+// })
+// .then(function(data){
+//   // console.log(data);
+//   initialize(data);
+// })
+// .catch(function(err){
+//   console.log("Error:", err);
+// });
+
+fetch("https://restcountries.eu/rest/v2/all")
+.then(res => res.json())
+.then(data => initialize(data))
+.catch(err => console.log("Error:", err));
+
+
+function initialize(countriesData) {
+  countries = countriesData;
+  let options = "";
+  // for(let i=0; i<countries.length; i++) {
+  //   options += `<option value="${countries[i].alpha3Code}">${countries[i].name}</option>`;
+  //   // options += `<option value="${countries[i].alpha3Code}">${countries[i].name} (+${countries[i].callingCodes[0]})</option>`;
+  // }
+  countries.forEach(country => options+=`<option value="${country.alpha3Code}">${country.name}</option>`);
+  // document.getElementById("countries").innerHTML = options;
+  // document.querySelector("#countries").innerHTML = options;
+  countriesList.innerHTML = options;
+  // console.log(countriesList);
+  // console.log(countriesList.value);
+  // console.log(countriesList.length);
+  // console.log(countriesList.selectedIndex);
+  // console.log(countriesList[10]);
+  // console.log(countriesList[10].value);
+  // console.log(countriesList[10].text);
+  countriesList.selectedIndex = Math.floor(Math.random()*countriesList.length);
+  displayCountryInfo(countriesList[countriesList.selectedIndex].value);
+}
+
+function displayCountryInfo(countryByAlpha3Code) {
+  const countryData = countries.find(country => country.alpha3Code === countryByAlpha3Code);
+  document.querySelector("#flag-container img").src = countryData.flag;
+  document.querySelector("#flag-container img").alt = `Flag of ${countryData.name}`; 
+  document.getElementById("Rcapital").innerHTML = countryData.capital;
+  document.getElementById("Rdialing-code").innerHTML = `+${countryData.callingCodes[0]}`;
+  document.getElementById("Rpopulation").innerHTML = countryData.population.toLocaleString("en-US");
+  document.getElementById("Rcurrencies").innerHTML = countryData.currencies.filter(c => c.name).map(c => `${c.name} (${c.code})`).join(", ");
+  document.getElementById("Rregion").innerHTML = countryData.region;
+  document.getElementById("Rsubregion").innerHTML = countryData.subregion;
+  document.getElementById("Rlatlng").innerHTML = countryData.latlng;
+  document.getElementById("Rtimezones").innerHTML = countryData.timezones;
+  document.getElementById("Rcodes").innerHTML = countryData.alpha2Code;
+  
+}
+    //Main Script
+    var xButton1=document.getElementById('button1');
+    xButton1.addEventListener('click', ceknegara);
+
+
+
+    function ceknegara() {
+      fetch("https://restcountries.eu/rest/v2/name/"+ document.getElementById("inputnegara").value)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data[0]);
+        document.getElementById('flag').src = data[0].flag
+        document.getElementById('nama').innerHTML = data[0].name
+        document.getElementById('capital').innerHTML = data[0].capital
+        document.getElementById('region').innerHTML = data[0].region
+        document.getElementById('subregion').innerHTML = data[0].subregion
+        document.getElementById('population').innerHTML = data[0].population
+        document.getElementById('latlng').innerHTML = data[0].latlng
+        document.getElementById('timezone').innerHTML = data[0].timezones
+        document.getElementById('code').innerHTML = data[0].alpha2Code
+        document.getElementById("currencies").innerHTML = data[0].currencies.filter(c => c.name).map(c => `${c.name} (${c.code})`).join(", ");
+        document.getElementById("dialing-code").innerHTML = `+${data[0].callingCodes[0]}`;
+        document.getElementById('inputkode').innerHTML = data[0].alpha2Code
+
+        
+      });
+    }
+    var xButton2=document.getElementById('button2')
+    xButton2.addEventListener('click', kodenegara,);
+    
+    function kodenegara(){
+      fetch('https://date.nager.at/api/v3/PublicHolidays/2021/'+ document.getElementById('inputkode').value)
+      .then((response) => response.json())
+      .catch(err => console.log("Error:", err))
+      .then((data) => {
+        console.log(data);
+        document.getElementById('date1').innerHTML = data[0].date
+        document.getElementById('engname1').innerHTML = data[0].name
+        document.getElementById('lclname1').innerHTML = data[0].localName
+        document.getElementById('date2').innerHTML = data[1].date
+        document.getElementById('engname2').innerHTML = data[1].name
+        document.getElementById('lclname2').innerHTML = data[1].localName
+        document.getElementById('date3').innerHTML = data[2].date
+        document.getElementById('engname3').innerHTML = data[2].name
+        document.getElementById('lclname3').innerHTML = data[2].localName
+        document.getElementById('date4').innerHTML = data[3].date
+        document.getElementById('engname4').innerHTML = data[3].name
+        document.getElementById('lclname4').innerHTML = data[3].localName
+        document.getElementById('date5').innerHTML = data[4].date
+        document.getElementById('engname5').innerHTML = data[4].name
+        document.getElementById('lclname5').innerHTML = data[4].localName
+        document.getElementById('date6').innerHTML = data[5].date
+        document.getElementById('engname6').innerHTML = data[5].name
+        document.getElementById('lclname6').innerHTML = data[5].localName
+        document.getElementById('date7').innerHTML = data[6].date
+        document.getElementById('engname7').innerHTML = data[6].name
+        document.getElementById('lclname7').innerHTML = data[6].localName
+        document.getElementById('date8').innerHTML = data[7].date
+        document.getElementById('engname8').innerHTML = data[7].name
+        document.getElementById('lclname8').innerHTML = data[7].localName
+        document.getElementById('date9').innerHTML = data[8].date
+        document.getElementById('engname9').innerHTML = data[8].name
+        document.getElementById('lclname9').innerHTML = data[8].localName
+        document.getElementById('date10').innerHTML = data[9].date
+        document.getElementById('engname10').innerHTML = data[9].name
+        document.getElementById('lclname10').innerHTML = data[9].localName
+      })
+    }
+
+    
+
+    </script>
+  </body>
+</html>
